@@ -1,6 +1,7 @@
 package com.example.hellokitty
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -20,6 +21,13 @@ class MainActivity : AppCompatActivity() {
 
         mHelloTextView = findViewById(R.id.textView)
         var imageButton: ImageButton = findViewById(R.id.imageButton)
+
+        val textView: TextView = findViewById(R.id.textView)
+
+        val button: Button = findViewById(R.id.button)
+        button.setOnClickListener {
+            textView.text = "Hello!"
+        }
 
         imageButton.setOnClickListener {
             mHelloTextView.setText("Hello Kitty")
