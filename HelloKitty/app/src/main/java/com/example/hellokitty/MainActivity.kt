@@ -1,6 +1,7 @@
 package com.example.hellokitty
 
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -10,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mHelloTextView: TextView
+    private lateinit var editText: EditText;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,10 +21,23 @@ class MainActivity : AppCompatActivity() {
         mHelloTextView = findViewById(R.id.textView)
         var imageButton: ImageButton = findViewById(R.id.imageButton)
 
+        imageButton.setOnClickListener {
+            mHelloTextView.setText("Hello Kitty")
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        editText = findViewById(R.id.editTextText)
+
+        imageButton.setOnClickListener {
+            if (editText.text.isEmpty()) {
+                mHelloTextView.text = "Hello Kitty!";
+            } else {
+                mHelloTextView.text = "Привет, " + editText.text
+            }
         }
     }
 }
