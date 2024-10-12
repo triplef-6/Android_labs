@@ -16,34 +16,31 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        /*
-        не работает из-за переменных
-         */
-//        val rootLayout: ConstraintLayout = findViewById(R.id.main)
-//        val textView: TextView = findViewById(R.id.textView)
-//        val redButton: Button = findViewById(R.id.button_red)
-//        val yellowButton: Button = findViewById(R.id.button_yellow)
-//        val greenButton: Button = findViewById(R.id.button_green)
+        val rootLayout: ConstraintLayout = findViewById(R.id.main)
+        val textView: TextView = findViewById(R.id.textView)
+        val redButton: Button = findViewById(R.id.button_red)
+        val yellowButton: Button = findViewById(R.id.button_yellow)
+        val greenButton: Button = findViewById(R.id.button_green)
 
-//
-//        redButton.setOnClickListener {
-//            textView.setText(R.string.red)
-//            rootLayout.setBackgroundColor(resources.getColor(R.color.redColor, null))
-//        }
-//
-//        yellowButton.setOnClickListener {
-//            textView.setText(R.string.yellow)
-//            rootLayout.setBackgroundColor(resources.getColor(R.color.yellowColor, null))
-//        }
-//
-//        greenButton.setOnClickListener {
-//            textView.setText(R.string.green)
-//            rootLayout.setBackgroundColor(resources.getColor(R.color.greenColor, null))
-//        }
+
+        redButton.setOnClickListener {
+            textView.setText(R.string.red)
+            rootLayout.setBackgroundColor(resources.getColor(R.color.redColor, null))
+        }
+
+        yellowButton.setOnClickListener {
+            textView.setText(R.string.yellow)
+            rootLayout.setBackgroundColor(resources.getColor(R.color.yellowColor, null))
+        }
+
+        greenButton.setOnClickListener {
+            textView.setText(R.string.green)
+            rootLayout.setBackgroundColor(resources.getColor(R.color.greenColor, null))
+        }
 
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
