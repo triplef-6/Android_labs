@@ -1,5 +1,6 @@
 package com.example.hellokitty
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -26,7 +27,13 @@ class MainActivity : AppCompatActivity() {
 
         val button: Button = findViewById(R.id.button)
         button.setOnClickListener {
-            textView.text = "Hello!"
+            val intent = Intent(this@MainActivity, AboutActivity::class.java)
+            startActivity(intent)
+        }
+        val botton2: Button = findViewById(R.id.button2)
+        botton2.setOnClickListener {
+            val intent = Intent(this@MainActivity, SecondActivity::class.java)
+            startActivity(intent)
         }
 
         imageButton.setOnClickListener {
