@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Three activities</string>
+    <string name="button1">Передать</string>
+    <string name="button2">Получить</string>
+</resources>
