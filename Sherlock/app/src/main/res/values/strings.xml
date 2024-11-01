@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Sherlock</string>
+    <string name="who">Кто?</string>
+    <string name="secondActivity">Who</string>
+</resources>
