@@ -5,7 +5,8 @@
 
     <TextView
         android:id="@+id/textview_about_content"
-        android:layout_width="wrap_content"
+        style="@style/MyTextStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/about_text"/>
+        android:text="@string/about_text" />
 </ScrollView>

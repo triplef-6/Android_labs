@@ -30,11 +30,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, AboutActivity::class.java)
             startActivity(intent)
         }
-        val botton2: Button = findViewById(R.id.button2)
-        botton2.setOnClickListener {
-            val intent = Intent(this@MainActivity, SecondActivity::class.java)
-            startActivity(intent)
-        }
+//        val botton2: Button = findViewById(R.id.button2)
+//        botton2.setOnClickListener {
+//            val intent = Intent(this@MainActivity, SecondActivity::class.java)
+//            startActivity(intent)
+//        }
 
         imageButton.setOnClickListener {
             mHelloTextView.setText("Hello Kitty")
