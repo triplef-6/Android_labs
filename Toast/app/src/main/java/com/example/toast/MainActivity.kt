@@ -35,10 +35,11 @@ class MainActivity : AppCompatActivity() {
         }
         button1.setOnClickListener {
             val toast = Toast.makeText(applicationContext, text, duration)
+            toast.setGravity(Gravity.CENTER, 0, 0)
+
             val toastContainer: LinearLayout = toast.view as LinearLayout
             val image = ImageView(this)
 
-            toast.setGravity(Gravity.CENTER, 0, 0)
             image.setImageResource(R.drawable.persepolis)
             toastContainer.addView(image, 0)
             toast.show()
