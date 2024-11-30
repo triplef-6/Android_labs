@@ -6,20 +6,19 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+    private var counter = 101
     companion object {
         const val NOTIFICATION_ID = 666
         const val CHANNEL_ID = "channelID"
@@ -49,12 +48,17 @@ class MainActivity : AppCompatActivity() {
                 .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+                .setLargeIcon(
+                    BitmapFactory.decodeResource(getResources(),
+                    R.drawable.ic_action_cat_24dp))
+                .setColor(Color.GREEN)
 
             with(NotificationManagerCompat.from(this)) {
-                notify(NOTIFICATION_ID, builder.build())
+                notify(counter++, builder.build())
             }
 
-            textView.text = R.string.feed.toString()
+            textView.text = getString(R.string.feed)
         }
 
         val button2: Button = findViewById(R.id.button2)
@@ -64,37 +68,42 @@ class MainActivity : AppCompatActivity() {
                 .setContentTitle(getString(R.string.reminder))
                 .setContentText(getString(R.string.pet))
                 .setAutoCancel(true)
-                .setPriority(NotificationCompat.PRIORITY_MAX)
+                .setPriority(NotificationCompat.PRIORITY_MIN)
                 .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+                .setLargeIcon(
+                    BitmapFactory.decodeResource(getResources(),
+                        R.drawable.ic_action_cat_24dp))
+                .setColor(Color.YELLOW)
 
-            val notificationManager = NotificationManagerCompat.from(this)
-            notificationManager.notify(NOTIFICATION_ID, builder.build())
 
             with(NotificationManagerCompat.from(this)) {
-                notify(NOTIFICATION_ID, builder.build())
+                notify(counter++, builder.build())
             }
 
-            textView.text = R.string.pet.toString()
+            textView.text = getString(R.string.pet)
         }
 
         val button3: Button = findViewById(R.id.button3)
-        button2.setOnClickListener {
+        button3.setOnClickListener {
             val builder = NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setContentTitle(getString(R.string.reminder))
                 .setContentText(getString(R.string.clear))
                 .setAutoCancel(true)
-                .setPriority(NotificationCompat.PRIORITY_MAX)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent)
-
-            val notificationManager = NotificationManagerCompat.from(this)
-            notificationManager.notify(NOTIFICATION_ID, builder.build())
+                .setAutoCancel(true)
+                .setLargeIcon(
+                    BitmapFactory.decodeResource(getResources(),
+                        R.drawable.ic_action_cat_24dp))
+                .setColor(Color.RED)
 
             with(NotificationManagerCompat.from(this)) {
-                notify(NOTIFICATION_ID, builder.build())
+                notify(counter++, builder.build())
             }
 
-            textView.text = R.string.clear.toString()
+            textView.text = getString(R.string.clear)
         }
     }
 
