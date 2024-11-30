@@ -1,6 +1,7 @@
 package com.example.converter
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        Log.i("MainActivity", "onCreate() called")
 
         val meterRadioButton: RadioButton = findViewById(R.id.radio_button_meter)
         val inputEditText: EditText = findViewById(R.id.editText)
@@ -40,7 +42,38 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
     }
+    override fun onStart() {
+        super.onStart()
+        Log.i("MainActivity", "onStart() called")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("MainActivity", "onRestart() called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("MainActivity", "onResume() called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("MainActivity", "onPause() called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("MainActivity", "onStop() called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("MainActivity", "onDestroy() called")
+    }
+
     // Конвертируем в метры
     private fun convertParrotToMeter(parrot: Float): Float = (parrot / 7.6).toFloat()
 
