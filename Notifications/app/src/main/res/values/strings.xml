@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Notifications</string>
+    <string name="feed">Надо покормить кота</string>
+    <string name="pet">Надо погладить кота</string>
+    <string name="clear">Надо почистить лоток</string>
+    <string name="reminder">Напоминание</string>
+</resources>
