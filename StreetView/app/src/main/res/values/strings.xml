@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StreetView</string>
+    <string name="maps">Карты</string>
+    <string name="street_view">Просмотр улиц</string>
+</resources>
