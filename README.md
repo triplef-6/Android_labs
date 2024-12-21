@@ -1,1 +1,13 @@
 Web development lab work
+---
+- День 23. Справочник: Manual
+- День 24. Камера: Camera
+- День 25. Настройки: Crowcounter
+- День 26. Экран настроек: Preferences
+- День 27. Блокнот: Notebook
+- День 28. Broadcast: Broadcast
+- День 29. Шаблон Google Maps Activity: GMaps
+- День 30. Фрагменты: Fragments
+- День 31. Шаблон "Basic Activity": BasicViews
+- День 32. AlertDialog: Dialog
+- День 33. RecyclerView: RecyclerView
